@@ -1629,3 +1629,88 @@ Processing by RailsAdmin::MainController#dashboard as HTML
 Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.3ms | Allocations: 25106)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-13 15:26:43 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html within layouts/application
+  Rendered homepage/index.html within layouts/application (Duration: 0.6ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 82.3ms | Allocations: 59930)
+Completed 200 OK in 90ms (Views: 85.3ms | ActiveRecord: 0.0ms | Allocations: 62920)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2023-12-13 15:26:43 -0500
+Processing by HomepageController#index as JSON
+  Parameters: {"path"=>"tasks"}
+  Rendering homepage/index.html
+  Rendered homepage/index.html (Duration: 0.0ms | Allocations: 12)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 1893)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2023-12-13 15:26:47 -0500
+Processing by TasksController#create as JSON
+  Parameters: {"task"=>{"content"=>"test"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("created_at", "updated_at", "content") VALUES (?, ?, ?)[0m  [["created_at", "2023-12-13 20:26:47.222182"], ["updated_at", "2023-12-13 20:26:47.222182"], ["content", "test"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering tasks/create.jbuilder
+  Rendered tasks/create.jbuilder (Duration: 0.5ms | Allocations: 255)
+Completed 200 OK in 14ms (Views: 1.9ms | ActiveRecord: 2.1ms | Allocations: 7112)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2023-12-13 15:26:48 -0500
+Processing by TasksController#create as JSON
+  Parameters: {"task"=>{"content"=>"wow"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("created_at", "updated_at", "content") VALUES (?, ?, ?)[0m  [["created_at", "2023-12-13 20:26:48.968586"], ["updated_at", "2023-12-13 20:26:48.968586"], ["content", "wow"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering tasks/create.jbuilder
+  Rendered tasks/create.jbuilder (Duration: 0.2ms | Allocations: 81)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.8ms | Allocations: 1236)
+
+
+Started PUT "/tasks/23/mark_complete" for 127.0.0.1 at 2023-12-13 15:26:51 -0500
+Processing by TasksController#mark_complete as JSON
+  Parameters: {"id"=>"23"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Update (0.8ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = ?, "completed" = ? WHERE "tasks"."id" = ?[0m  [["updated_at", "2023-12-13 20:26:51.735198"], ["completed", 1], ["id", 23]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering tasks/mark_complete.jbuilder
+  Rendered tasks/mark_complete.jbuilder (Duration: 1.2ms | Allocations: 212)
+Completed 200 OK in 14ms (Views: 2.9ms | ActiveRecord: 2.0ms | Allocations: 2727)
+
+
+Started DELETE "/tasks/23" for 127.0.0.1 at 2023-12-13 15:26:52 -0500
+Processing by TasksController#destroy as JSON
+  Parameters: {"id"=>"23"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 23]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 828)
+
+
+Started PUT "/tasks/24/mark_complete" for 127.0.0.1 at 2023-12-13 15:26:54 -0500
+Processing by TasksController#mark_complete as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Update (0.4ms)[0m  [1m[33mUPDATE "tasks" SET "updated_at" = ?, "completed" = ? WHERE "tasks"."id" = ?[0m  [["updated_at", "2023-12-13 20:26:54.227319"], ["completed", 1], ["id", 24]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering tasks/mark_complete.jbuilder
+  Rendered tasks/mark_complete.jbuilder (Duration: 0.2ms | Allocations: 99)
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.5ms | Allocations: 1145)
+
+
+Started DELETE "/tasks/24" for 127.0.0.1 at 2023-12-13 15:26:55 -0500
+Processing by TasksController#destroy as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Destroy (0.5ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 24]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.6ms | Allocations: 666)
+
+
