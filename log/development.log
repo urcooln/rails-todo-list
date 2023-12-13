@@ -1714,3 +1714,22 @@ Processing by TasksController#destroy as JSON
 Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.6ms | Allocations: 666)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-13 16:01:03 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html within layouts/application
+  Rendered homepage/index.html within layouts/application (Duration: 1.0ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 48.7ms | Allocations: 40619)
+Completed 200 OK in 57ms (Views: 51.5ms | ActiveRecord: 0.0ms | Allocations: 43618)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2023-12-13 16:01:04 -0500
+Processing by HomepageController#index as JSON
+  Parameters: {"path"=>"tasks"}
+  Rendering homepage/index.html
+  Rendered homepage/index.html (Duration: 0.0ms | Allocations: 12)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 1877)
+
+
