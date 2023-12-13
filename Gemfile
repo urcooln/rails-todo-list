@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.6.1'
+gem 'rails', '~> 6.1.x'
 # Use Puma as the app server
 gem 'puma', '>= 5.6.4'
 # Use SCSS for stylesheets
@@ -15,6 +15,8 @@ gem 'uglifier', '~> 4.2'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'bundler', '~> 2.0.2'
+
+gem 'thor', '1.3.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.4'
