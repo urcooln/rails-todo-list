@@ -80,4 +80,3 @@ group :production do
   gem 'pg', '~> 1.4.3'
 end
 gem 'sassc-rails'
-gem 'sassc-rails'
