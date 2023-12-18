@@ -1828,3 +1828,22 @@ Processing by HomepageController#index as JSON
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 1043)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-18 10:44:13 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html within layouts/application
+  Rendered homepage/index.html within layouts/application (Duration: 0.7ms | Allocations: 274)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 11505)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 14167)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2023-12-18 10:44:13 -0500
+Processing by HomepageController#index as JSON
+  Parameters: {"path"=>"tasks"}
+  Rendering homepage/index.html
+  Rendered homepage/index.html (Duration: 0.0ms | Allocations: 12)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1054)
+
+
