@@ -26,7 +26,7 @@ class TasksController < ApplicationController
         @task = Task.find_by(id: params[:id])
 
         if @task and @task.update(completed: true)
-            render 'tasks/mark_complete'
+            render 'tasks/update'
         end
     end
 
